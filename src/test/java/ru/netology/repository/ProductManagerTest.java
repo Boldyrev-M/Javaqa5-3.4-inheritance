@@ -49,6 +49,15 @@ class ProductManagerTest {
         boolean voy = testManager.matches(book1, "Война и мiръ");
         assertTrue(voy);
 
+        Smartphone phone1 = new Smartphone(4, "iPhone", 12_399, "Apple");
+        boolean appl = testManager.matches(phone1, "Apple");
+        assertTrue(appl);
+        boolean namePhone = testManager.matches(phone1, "iPhone");
+        assertTrue(namePhone);
+
+        Product badProd = new Product();
+        boolean noBookNoPhone = testManager.matches(badProd, "Война и мiръ");
+        assertFalse(noBookNoPhone);
 
     }
 }

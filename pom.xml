@@ -74,6 +74,10 @@
                             <haltOnFailure>true</haltOnFailure>
                             <rules>
                                 <rule>
+                                    <element>CLASS</element>
+                                    <includes>
+                                        <include>ProductManager</include>
+                                    </includes>
                                     <limits>
                                         <limit>
                                             <counter>BRANCH</counter>
