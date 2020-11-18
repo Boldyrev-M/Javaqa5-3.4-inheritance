@@ -21,38 +21,11 @@ public class ProductManager {
         ProductRepository tempRepo = new ProductRepository();
 
         for (Product checkOneProd : allProducts) {
-            if( matches(checkOneProd, searching))
+            if( checkOneProd.matches(searching) )
                 tempRepo.save(checkOneProd);
         }
 
         return tempRepo.getAllProducts();
-    }
-
-    public boolean matches(Product prod, String search) {
-
-        if (prod instanceof Book) {
-            // для книги по полям название и автор
-            Book book = (Book) prod;
-            if (book.getName().equalsIgnoreCase(search)) {
-                return true;
-            }
-            if (book.getAuthor().equalsIgnoreCase(search)) {
-                return true;
-            }
-            return false;
-        }
-        if (prod instanceof Smartphone) {
-            // для смартфона по полям название и производитель
-            Smartphone smart = (Smartphone) prod;
-            if (smart.getName().equalsIgnoreCase(search)) {
-                return true;
-            }
-            if (smart.getManufacturer().equalsIgnoreCase(search)) {
-                return true;
-            }
-            return false;
-        }
-        return false;
     }
 
     @Override

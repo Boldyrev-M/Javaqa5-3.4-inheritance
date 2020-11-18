@@ -41,6 +41,10 @@ private int price;
         this.price = price;
     }
 
+    public boolean matches(String search){
+        return name.equalsIgnoreCase(search);
+    }
+
     @Override
     public String toString() {
         return "Product{" +
