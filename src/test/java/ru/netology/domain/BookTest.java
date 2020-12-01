@@ -11,11 +11,16 @@ class BookTest {
 
         Book book1 = new Book(1, "Война и мiръ", 1000, "Лев Толстой");
         boolean lev = book1.matches("лев");
-        assertFalse(lev);
+//        совпал по автору
+        assertTrue(lev);
 
-        boolean levTolstoy = book1.matches("лев толстой");
-        assertTrue(levTolstoy);
-        boolean voy = book1.matches("Война и мiръ");
+        boolean ivanov = book1.matches("Иванов");
+        // нет подстроки
+        assertFalse(ivanov);
+
+        boolean voy = book1.matches("и мiръ");
+        // совпал по названию
         assertTrue(voy);
     }
+
 }

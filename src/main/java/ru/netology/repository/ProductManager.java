@@ -34,4 +34,8 @@ public class ProductManager {
                 "repo=" + repo +
                 '}';
     }
+
+    public Product[] getAll() {
+        return repo.getAllProducts();
+    }
 }

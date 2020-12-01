@@ -42,7 +42,12 @@ private int price;
     }
 
     public boolean matches(String search){
-        return name.equalsIgnoreCase(search);
+//        возвращает true только при полном совпадении
+//        return name.equalsIgnoreCase(search);
+
+//        ищет совпадение подстроки
+        String nameToLower = name.toLowerCase();
+        return nameToLower.contains(search.toLowerCase());
     }
 
     @Override

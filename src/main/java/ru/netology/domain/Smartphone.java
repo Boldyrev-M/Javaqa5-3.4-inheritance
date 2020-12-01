@@ -24,6 +24,7 @@ public class Smartphone extends Product {
     public boolean matches(String search) {
         if (super.matches(search)) return true;
         else
-            return manufacturer.equalsIgnoreCase(search);
+            // совпадение подстроки в названии производителя
+            return manufacturer.toLowerCase().contains(search.toLowerCase());
     }
 }
